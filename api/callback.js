@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { WebhookClient, EmbedBuilder } from 'discord.js';
 
-const CLIENT_ID = process.env.CLIENT_ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const REDIRECT_URI = process.env.REDIRECT_URI;
-const WEBHOOK_URL = process.env.WEBHOOK_URL;
+const CLIENT_ID = "1408754388968935424";
+const CLIENT_SECRET = "JcPHRNzoeDR-YHFOALMcHxGhANSYUtUv";
+const REDIRECT_URI = "https://discord-verification-1391178545744576602.vercel.app/api/callback";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1408778160644034631/6eS9eSuGmQc8VoCJXE1Yilb6a-4WZqSauidezmDp_YYGFyustSvybJRF9Dl2EaXPFHnv";
 
 const webhookClient = new WebhookClient({ url: WEBHOOK_URL });
 
