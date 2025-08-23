@@ -48,7 +48,7 @@ export default async function handler(req, res) {
     });
 
     // Nutzer auf eigene Seite weiterleiten
-    res.writeHead(302, { Location: '/verifiziert' });
+    res.writeHead(302, { Location: './verifiziert' });
     res.end();
   } catch (err) {
     console.error(err.response?.data || err);
