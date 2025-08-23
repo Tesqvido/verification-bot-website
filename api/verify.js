@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const WEBHOOK_URL = "https://discord.com/api/webhooks/…";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1408778160644034631/6eS9eSuGmQc8VoCJXE1Yilb6a-4WZqSauidezmDp_YYGFyustSvybJRF9Dl2EaXPFHnv";
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
