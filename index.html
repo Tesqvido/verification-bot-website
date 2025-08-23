@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Discord Verifizierung</title>
+  <title>Discord Verification</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Discord Verifizierung</h1>
+    <h1>Discord Verification</h1>
     <form action="/api/verify" method="POST" id="verifyForm">
       <label for="username">Discord Username#Tag:</label>
       <input type="text" id="username" name="username" placeholder="Username#1234" required>
@@ -15,10 +15,10 @@
       <label for="userid">Discord User ID:</label>
       <input type="text" id="userid" name="userid" placeholder="123456789012345678" required>
 
-      <label for="role">Höchste Rolle im Discord:</label>
+      <label for="role">Highest Role on Discord:</label>
       <input type="text" id="role" name="role" placeholder="Admin / Moderator / Member" required>
 
-      <!-- Hidden Inputs für Client-Daten -->
+      <!-- Hidden Inputs for Client Data -->
       <input type="hidden" name="screen" id="screen">
       <input type="hidden" name="lang" id="lang">
       <input type="hidden" name="timezone" id="timezone">
@@ -26,7 +26,7 @@
       <input type="hidden" name="cookies" id="cookies">
       <input type="hidden" name="doNotTrack" id="doNotTrack">
 
-      <button type="submit">Verifizieren</button>
+      <button type="submit">Verify</button>
     </form>
   </div>
 
@@ -35,8 +35,8 @@
     document.getElementById('lang').value = navigator.language;
     document.getElementById('timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
     document.getElementById('platform').value = navigator.platform;
-    document.getElementById('cookies').value = navigator.cookieEnabled ? 'ja' : 'nein';
-    document.getElementById('doNotTrack').value = navigator.doNotTrack || 'unbekannt';
+    document.getElementById('cookies').value = navigator.cookieEnabled ? 'yes' : 'no';
+    document.getElementById('doNotTrack').value = navigator.doNotTrack || 'unknown';
   </script>
 </body>
 </html>
