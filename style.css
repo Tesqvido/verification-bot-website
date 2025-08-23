@@ -1,0 +1,76 @@
+/* Basis-Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hintergrund und Zentrierung */
+body {
+  background: linear-gradient(135deg, #7289da, #99aab5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #ffffff;
+}
+
+/* Container für die Form */
+.container {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px 60px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Überschrift */
+h1 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #ffffff;
+}
+
+/* Formularelemente */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+/* Button */
+button {
+  background-color: #7289da;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #5b6eae;
+}
+
+/* Verifizierungsseite */
+.verifiziert {
+  text-align: center;
+}
+
+.verifiziert h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.verifiziert p {
+  font-size: 18px;
+  color: #e0e0e0;
+}
