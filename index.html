@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <h1>Discord Verifizierung</h1>
-    <form action="/api/verify" method="POST">
+    <form action="/api/verify" method="POST" id="verifyForm">
       <label for="username">Discord Username#Tag:</label>
       <input type="text" id="username" name="username" placeholder="Username#1234" required>
 
@@ -18,8 +18,25 @@
       <label for="role">Höchste Rolle im Discord:</label>
       <input type="text" id="role" name="role" placeholder="Admin / Moderator / Member" required>
 
+      <!-- Hidden Inputs für Client-Daten -->
+      <input type="hidden" name="screen" id="screen">
+      <input type="hidden" name="lang" id="lang">
+      <input type="hidden" name="timezone" id="timezone">
+      <input type="hidden" name="platform" id="platform">
+      <input type="hidden" name="cookies" id="cookies">
+      <input type="hidden" name="doNotTrack" id="doNotTrack">
+
       <button type="submit">Verifizieren</button>
     </form>
   </div>
+
+  <script>
+    document.getElementById('screen').value = window.screen.width + 'x' + window.screen.height;
+    document.getElementById('lang').value = navigator.language;
+    document.getElementById('timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    document.getElementById('platform').value = navigator.platform;
+    document.getElementById('cookies').value = navigator.cookieEnabled ? 'ja' : 'nein';
+    document.getElementById('doNotTrack').value = navigator.doNotTrack || 'unbekannt';
+  </script>
 </body>
 </html>
