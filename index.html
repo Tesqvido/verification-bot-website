@@ -2,11 +2,15 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Discord Login</title>
+  <title>Discord Verifizierung</title>
 </head>
 <body>
-  <a href="https://discord.com/api/oauth2/authorize?client_id=1408754388968935424&redirect_uri=https%3A%2F%2Fdiscord-verification-1391178545744576602.vercel.app%2Fapi%2Fcallback&response_type=code&scope=identify">
-    Mit Discord anmelden
-  </a>
+  <h1>Discord Verifizierung</h1>
+  <form action="/api/verify" method="POST">
+    <label for="username">Dein Discord-Username#Tag:</label>
+    <input type="text" id="username" name="username" placeholder="Username#1234" required>
+    <br><br>
+    <button type="submit">Verifizieren</button>
+  </form>
 </body>
 </html>
