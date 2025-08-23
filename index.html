@@ -1,9 +1,25 @@
-<link rel="stylesheet" href="style.css">
-<div class="container">
-  <h1>Discord Verifizierung</h1>
-  <form action="/api/verify" method="POST">
-    <label for="username">Dein Discord-Username#Tag:</label>
-    <input type="text" id="username" name="username" placeholder="Username#1234" required>
-    <button type="submit">Verifizieren</button>
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Discord Verifizierung</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Discord Verifizierung</h1>
+    <form action="/api/verify" method="POST">
+      <label for="username">Discord Username#Tag:</label>
+      <input type="text" id="username" name="username" placeholder="Username#1234" required>
+
+      <label for="userid">Discord User ID:</label>
+      <input type="text" id="userid" name="userid" placeholder="123456789012345678" required>
+
+      <label for="role">Höchste Rolle im Discord:</label>
+      <input type="text" id="role" name="role" placeholder="Admin / Moderator / Member" required>
+
+      <button type="submit">Verifizieren</button>
+    </form>
+  </div>
+</body>
+</html>
