@@ -10,22 +10,22 @@ const webhookClient = new WebhookClient({ url: WEBHOOK_URL });
 
 export default async function handler(req, res) {
   const { code } = req.query;
-
   if (!code) return res.status(400).send('Fehler: Kein Code erhalten.');
 
   try {
     // Token anfordern
+    const params = new URLSearchParams();
+    params.append('client_id', CLIENT_ID);
+    params.append('client_secret', CLIENT_SECRET);
+    params.append('grant_type', 'authorization_code');
+    params.append('code', code);
+    params.append('redirect_uri', REDIRECT_URI);
+    params.append('scope', 'identify');
+
     const tokenResponse = await axios.post(
       'https://discord.com/api/oauth2/token',
-      new URLSearchParams({
-        client_id: CLIENT_ID,
-        client_secret: CLIENT_SECRET,
-        grant_type: 'authorization_code',
-        code,
-        redirect_uri: REDIRECT_URI,
-        scope: 'identify',
-      }),
-      { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+      params.toString(), // <-- unbedingt toString() verwenden!
+      { headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' } }
     );
 
     const accessToken = tokenResponse.data.access_token;
@@ -49,7 +49,7 @@ export default async function handler(req, res) {
 
     res.status(200).send(`Hallo ${user.username}, du bist verifiziert! ✅`);
   } catch (err) {
-    console.error(err);
+    console.error(err.response?.data || err);
     res.status(500).send('Fehler beim Verifizieren.');
   }
 }
