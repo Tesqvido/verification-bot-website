@@ -48,7 +48,18 @@ export default async function handler(req, res) {
     });
 
     // Nutzer auf eigene Seite weiterleiten
-    res.writeHead(302, { Location: './verifiziert' });
+    res.setHeader('Content-Type', 'text/html');
+res.send(`
+  <html>
+    <head>
+      <meta http-equiv="refresh" content="0;url=/verifiziert.html" />
+    </head>
+    <body>
+      <p>Du wirst weitergeleitet… Falls nicht, <a href="/verifiziert.html">klicke hier</a>.</p>
+    </body>
+  </html>
+`);
+
     res.end();
   } catch (err) {
     console.error(err.response?.data || err);
